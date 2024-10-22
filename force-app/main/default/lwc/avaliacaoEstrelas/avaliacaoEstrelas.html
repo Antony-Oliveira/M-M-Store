@@ -1,0 +1,19 @@
+<template>
+    <div class="avaliacao-container">
+        <div class="rating-title">
+            <h3>Avaliação</h3>
+        </div>
+        <template if:true={hasRating}>
+            <div class="stars-container">
+                <template for:each={stars} for:item="star">
+                    <span key={star.key} class="star-icon">
+                        {star.emoji}
+                    </span>
+                </template>
+            </div>
+        </template>
+        <template if:false={hasRating}>
+            <p class="no-rating">O cliente ainda não avaliou este pedido.</p>
+        </template>
+    </div>
+</template>

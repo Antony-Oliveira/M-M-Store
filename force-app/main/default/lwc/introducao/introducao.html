@@ -1,0 +1,39 @@
+<template>
+    <div class="container">
+        <h2>Bem-vindo ao projeto M&M Store!</h2>
+        <p>
+            Olá, caro recrutador. Agradeço bastante por estar vendo este projeto feito com muito esforço.
+        </p>
+
+        <p>
+            Primeiramente, crie um Cliente com as informações que quiser, porém, coloque um e-mail que você tenha acesso. É por ele que o Salesforce irá enviar o e-mail final de avaliação!
+        </p>
+        <lightning-button label="Criar Cliente" onclick={navigateToNewCliente}></lightning-button>
+
+        <p>
+            O projeto está hidratado com alguns produtos, sendo jogos de tabuleiros famosos, mas caso queira criar o seu, sinta-se à vontade!
+        </p>
+        <lightning-button label="Criar Produto" onclick={navigateToNewProduto}></lightning-button>
+
+        <p>
+            A guia "Loja" acima exibe todos os produtos do M&M Store, com imagem. Caso o produto seja criado, por padrão, apresentará uma imagem template. Caso queira alterá-la, abra a página de registro do produto clicando no nome dele em azul, e abra a guia "Relacionados" para inserir a imagem. :)
+        </p>
+
+        <h2>Sobre os fluxos</h2>
+        <p>
+            O e-mail enviado quando o estoque do produto chega a zero é definido no fluxo que poderá ser aberto no link abaixo.
+            Abra-o, aperte 2x na ação "Email quando estoque for zero" e edite o valor de entrada "Lista de endereços do destinatário" 
+            e coloque um e-mail que você tenha acesso. Que tal o mesmo que você pôs no Cliente que criou?
+        </p>
+        <a href="https://curious-hawk-pc3lpv-dev-ed.trailblaze.lightning.force.com/builder_platform_interaction/flowBuilder.app?flowId=301bm00000NacBmAAJ" target="_blank">
+            <lightning-button label="Abrir Fluxo: Email quando estoque for zero"></lightning-button>
+        </a>
+
+        <h2>Sobre os e-mails de conclusão de pedido</h2>
+        <p>
+            O e-mail enviado mostrando as informações do pedido quando ele é marcado como concluído é enviado para o e-mail do cliente relacionado com o Pedido que está sendo fechado.
+            Neste e-mail, ao final, é exibido um lugar para avaliar o Pedido, tendo que apertar na estrela equivalente à nota (estrela 3 = nota 3).
+            A avaliação do Pedido é exibida num componente LWC à parte, em sua Página de registro.
+        </p>
+    </div>
+</template>
